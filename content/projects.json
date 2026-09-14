@@ -85,6 +85,29 @@
       "images": [],
       "github": "",
       "demo": ""
+    },
+    {
+      "id": "demo-interf",
+      "enabled": true,
+      "name": "Interface Experiments",
+      "status": "DEMO CONTENT",
+      "featured": false,
+      "coverLabel": "03",
+      "summary": "A sample entry for work that has no screenshots available.",
+      "description": "This demonstration project has no images. Its details open directly with the description and technology stack.\n\nThe same structure can support publicly shareable descriptions of private projects. Do not put confidential information in these files.",
+      "categories": [
+        "Angular",
+        "Web"
+      ],
+      "stack": [
+        "Angular",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ],
+      "images": [],
+      "github": "",
+      "demo": ""
     }
   ]
 }

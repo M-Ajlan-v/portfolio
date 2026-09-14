@@ -523,7 +523,124 @@ function projectCard(item, certificate = false) {
 
   return card;
 }
+function createCardSlider(grid, title, certificates = false) {
+  const wrapper = element(
+    "div",
+    certificates
+      ? "card-slider certificates-slider"
+      : "card-slider"
+  );
 
+  grid.tabIndex = 0;
+  grid.setAttribute("role", "region");
+  grid.setAttribute("aria-label", title);
+
+  const controls = element("div", "slider-controls");
+
+  const previous = element("button", "slider-arrow", "←");
+  const next = element("button", "slider-arrow", "→");
+
+  previous.type = "button";
+  next.type = "button";
+
+  previous.setAttribute(
+    "aria-label",
+    labels.previousCards || labels.previous
+  );
+
+  next.setAttribute(
+    "aria-label",
+    labels.nextCards || labels.next
+  );
+
+  append(controls, previous, next);
+  append(wrapper, grid, controls);
+
+  let frame = 0;
+
+  function smoothAllowed() {
+    return (
+      data.site.motion?.enabled !== false &&
+      !matchMedia("(prefers-reduced-motion: reduce)").matches
+    );
+  }
+
+  function update() {
+    frame = 0;
+
+    const maximum = Math.max(0, grid.scrollWidth - grid.clientWidth);
+    const position = Math.max(0, grid.scrollLeft);
+
+    controls.hidden = maximum <= 2;
+    grid.tabIndex = maximum > 2 ? 0 : -1;
+
+    previous.setAttribute(
+      "aria-disabled",
+      String(position <= 2)
+    );
+
+    next.setAttribute(
+      "aria-disabled",
+      String(position >= maximum - 2)
+    );
+  }
+
+  function scheduleUpdate() {
+    if (!frame) frame = requestAnimationFrame(update);
+  }
+
+  function move(direction) {
+    const button = direction < 0 ? previous : next;
+    if (button.getAttribute("aria-disabled") === "true") return;
+
+    const firstCard = grid.querySelector(".project-card");
+    if (!firstCard) return;
+
+    const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+    const distance = firstCard.getBoundingClientRect().width + gap;
+
+    grid.scrollBy({
+      left: direction * distance,
+      behavior: smoothAllowed() ? "smooth" : "auto"
+    });
+  }
+
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+
+  grid.addEventListener("scroll", scheduleUpdate, { passive: true });
+
+  // Keyboard arrows work when the scroll region itself has focus.
+  grid.addEventListener("keydown", event => {
+    if (event.target !== grid) return;
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      move(1);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      move(-1);
+    }
+  });
+
+  const resizeObserver = new ResizeObserver(scheduleUpdate);
+  resizeObserver.observe(grid);
+
+  function refresh(resetPosition = false) {
+    if (resetPosition) {
+      grid.scrollLeft = 0;
+    }
+
+    scheduleUpdate();
+  }
+
+  scheduleUpdate();
+
+  return {
+    wrapper,
+    refresh
+  };
+}
 function renderProjects() {
   const content = data.projects;
   const items = visible(content.items);
@@ -552,6 +669,13 @@ function renderProjects() {
   search.hidden = items.length < (content.searchThreshold || 9);
 
   const grid = element("div", "project-grid");
+const slider = createCardSlider(
+  grid,
+  content.title,
+  false
+);
+
+let previousFilterKey = "";
   const empty = element("p", "muted", labels.noResults);
   empty.setAttribute("role", "status");
 
@@ -579,12 +703,36 @@ function renderProjects() {
       return categoryMatch && searchable.includes(query);
     });
 
-    grid.replaceChildren(
-      ...matching.slice(0, shown).map(item => projectCard(item))
-    );
+    const filterKey = JSON.stringify([selected, query]);
+const resetPosition = filterKey !== previousFilterKey;
+previousFilterKey = filterKey;
 
-    empty.hidden = matching.length !== 0;
-    more.hidden = matching.length <= shown;
+// Preserve existing cards when "Show more" appends entries.
+const displayed = matching.slice(0, shown);
+const existing = new Map(
+  [...grid.children].map(card => [card.dataset.projectId, card])
+);
+
+const cards = displayed.map(item => {
+  const id = String(item.id);
+  const card = existing.get(id) || projectCard(item);
+  card.dataset.projectId = id;
+  return card;
+});
+
+if (resetPosition) {
+  grid.replaceChildren(...cards);
+} else {
+  cards.forEach(card => {
+    if (card.parentElement !== grid) grid.append(card);
+  });
+}
+
+empty.hidden = matching.length !== 0;
+more.hidden = matching.length <= shown;
+slider.wrapper.hidden = matching.length === 0;
+
+slider.refresh(resetPosition);
   }
 
   [null, ...categories].forEach(category => {
@@ -626,7 +774,7 @@ function renderProjects() {
   });
 
   append(controls, filters, search);
-  append(inner, controls, grid, empty, more);
+  append(inner, controls, slider.wrapper, empty, more);
   render();
 
   return outer;
@@ -725,26 +873,37 @@ function renderCertificates() {
   const { outer, inner } = section("certificates", content);
   const grid = element("div", "certificate-grid");
 
+  const slider = createCardSlider(
+    grid,
+    content.title,
+    true
+  );
+
   const size = Math.max(1, Number(content.pageSize) || 6);
   let shown = size;
 
   const more = element("button", "load-more", labels.loadMore);
   more.type = "button";
 
-  const render = () => {
-    grid.replaceChildren(
-      ...items.slice(0, shown).map(item => projectCard(item, true))
-    );
+  function render() {
+    const existingCount = grid.children.length;
+
+    items.slice(existingCount, shown).forEach(item => {
+      grid.append(projectCard(item, true));
+    });
+
     more.hidden = shown >= items.length;
-  };
+    slider.refresh();
+  }
 
   more.addEventListener("click", () => {
     shown += size;
     render();
   });
 
-  append(inner, grid, more);
+  append(inner, slider.wrapper, more);
   render();
+
   return outer;
 }
 

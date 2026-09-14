@@ -82,6 +82,8 @@
     "noResults": "No projects match your search.",
     "loadMore": "Show more",
     "allProjects": "All work",
-    "backToTop": "Back to top ↑"
+    "backToTop": "Back to top ↑",
+    "previousCards": "Scroll to previous cards",
+    "nextCards": "Scroll to next cards"
   }
 }

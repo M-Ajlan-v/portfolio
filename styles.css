@@ -1879,3 +1879,161 @@ html.motion-off {
     width: 86%;
   }
 }
+/* Horizontal project and certificate galleries */
+
+.card-slider {
+  min-width: 0;
+  --slide-width: calc((100% - 56px) / 3);
+}
+
+.card-slider.certificates-slider {
+  --slide-width: calc((100% - 72px) / 3.5);
+}
+
+.card-slider .project-grid,
+.card-slider .certificate-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  margin: 0;
+  padding: 14px 4px 28px;
+
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  overscroll-behavior-inline: contain;
+
+  scrollbar-width: thin;
+  scrollbar-color: #79b4ff55 transparent;
+
+  /* Native touch scrolling in both directions */
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+.card-slider .project-grid::-webkit-scrollbar,
+.card-slider .certificate-grid::-webkit-scrollbar {
+  height: 5px;
+}
+
+.card-slider .project-grid::-webkit-scrollbar-thumb,
+.card-slider .certificate-grid::-webkit-scrollbar-thumb {
+  background: #79b4ff55;
+  border-radius: 100px;
+}
+
+.card-slider .project-card {
+  flex: 0 0 var(--slide-width);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* Smaller certificate presentation */
+.certificates-slider .project-cover {
+  aspect-ratio: 4 / 3;
+}
+
+.certificates-slider .project-body {
+  padding: 22px 12px 18px;
+}
+
+.certificates-slider .project-body h3 {
+  font-size: 1.2rem;
+}
+
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.slider-arrow {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+
+  color: var(--text);
+  background: #ffffff04;
+  border: 1px solid #ffffff25;
+  border-radius: 50%;
+
+  font-size: 1.3rem;
+  line-height: 1;
+
+  transition:
+    transform .35s var(--ease),
+    background-color .3s,
+    border-color .3s,
+    opacity .3s;
+}
+
+.slider-arrow[aria-disabled="true"] {
+  opacity: .3;
+  cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .slider-arrow:not([aria-disabled="true"]):hover {
+    background: #79b4ff16;
+    border-color: #79b4ff65;
+    transform: translateY(-2px);
+  }
+}
+
+.slider-arrow:not([aria-disabled="true"]):active {
+  transform: scale(.95);
+}
+
+@media (max-width: 1100px) {
+  .card-slider {
+    --slide-width: calc((100% - 36px) / 2.15);
+  }
+
+  .card-slider.certificates-slider {
+    --slide-width: calc((100% - 36px) / 2.4);
+  }
+}
+
+@media (max-width: 760px) {
+  .card-slider {
+    --slide-width: 86%;
+  }
+
+  .card-slider.certificates-slider {
+    --slide-width: 76%;
+  }
+
+  .card-slider .project-grid,
+  .card-slider .certificate-grid {
+    gap: 16px;
+    padding-bottom: 20px;
+  }
+
+  .slider-controls {
+    margin-top: 12px;
+  }
+
+  .slider-arrow {
+    width: 44px;
+    height: 44px;
+    flex-basis: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-arrow {
+    transition: none;
+  }
+
+  .slider-arrow:hover,
+  .slider-arrow:active {
+    transform: none !important;
+  }
+}
