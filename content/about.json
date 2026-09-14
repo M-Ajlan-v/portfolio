@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "eyebrow": "03 / THE PERSON BEHIND THE CODE",
+  "title": "Curious by nature. A developer by practice.",
+  "image": "",
+  "imageAlt": "",
+  "paragraphs": [
+    "I’m Muhammed Ajlan V, a BCA graduate and Flutter developer at Triasoft Softwares.",
+    "My journey includes a three-month Angular internship and ongoing work in mobile development. I enjoy understanding how an interface works, improving the small details, and learning through practical problems."
+  ],
+  "highlights": [
+    {
+      "id": "focus",
+      "title": "Current focus",
+      "text": "Flutter interfaces, Dart, and state management with Provider."
+    },
+    {
+      "id": "approach",
+      "title": "How I work",
+      "text": "Understand the problem, build carefully, and keep improving."
+    }
+  ]
+}

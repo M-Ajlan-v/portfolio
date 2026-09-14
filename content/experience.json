@@ -1,0 +1,26 @@
+{
+  "enabled": true,
+  "eyebrow": "04 / EXPERIENCE",
+  "title": "Learning through real work.",
+  "description": "",
+  "items": [
+    {
+      "id": "triasoft-flutter",
+      "title": "Flutter Developer",
+      "organization": "Triasoft Softwares",
+      "period": "Present",
+      "paragraphs": [
+        "Working in Flutter development."
+      ]
+    },
+    {
+      "id": "triasoft-angular-internship",
+      "title": "Angular Developer Intern",
+      "organization": "Triasoft Softwares",
+      "period": "3 months",
+      "paragraphs": [
+        "Completed a three-month internship in Angular development."
+      ]
+    }
+  ]
+}

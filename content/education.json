@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "eyebrow": "05 / EDUCATION",
+  "title": "Where the foundations began.",
+  "description": "",
+  "items": [
+    {
+      "id": "bca",
+      "title": "Bachelor of Computer Applications",
+      "organization": "WMO Arts and Science College, Muttil",
+      "period": "",
+      "paragraphs": []
+    },
+    {
+      "id": "plus-two",
+      "title": "Plus Two",
+      "organization": "GHSS Vaduvanchal",
+      "period": "",
+      "paragraphs": []
+    },
+    {
+      "id": "sslc",
+      "title": "SSLC",
+      "organization": "GHSS Vaduvanchal",
+      "period": "",
+      "paragraphs": []
+    }
+  ]
+}

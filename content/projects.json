@@ -1,0 +1,90 @@
+{
+  "enabled": true,
+  "eyebrow": "02 / SELECTED WORK",
+  "title": "Ideas, brought to the screen.",
+  "description": "A space for projects, experiments, and the lessons behind them.",
+  "pageSize": 6,
+  "searchThreshold": 9,
+  "items": [
+    {
+      "id": "demo-task-planner",
+      "enabled": true,
+      "name": "Task Planner",
+      "status": "DEMO CONTENT",
+      "featured": true,
+      "coverLabel": "01",
+      "summary": "A sample project entry for a mobile task-planning interface.",
+      "description": "This is demonstration content for the portfolio layout, not a claim of completed work.\n\nReplace this description with the project’s purpose, your contribution, the problems you solved, and what you learned.",
+      "categories": [
+        "Flutter",
+        "Mobile"
+      ],
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Provider"
+      ],
+      "images": [
+        {
+          "src": "./images/img2.jpeg",
+          "alt": "Task Planner demonstration screenshot one"
+        },
+        {
+          "src": "./images/img3.jpeg",
+          "alt": "Task Planner demonstration screenshot two"
+        }
+      ],
+      "github": "",
+      "demo": ""
+    },
+    {
+      "id": "demo-weather",
+      "enabled": true,
+      "name": "Weather Interface",
+      "status": "DEMO CONTENT",
+      "featured": false,
+      "coverLabel": "02",
+      "summary": "A sample project entry showing how a single screenshot appears.",
+      "description": "This demonstration entry contains one screenshot. The gallery automatically hides its previous and next controls.\n\nReplace this text with genuine project information.",
+      "categories": [
+        "Flutter",
+        "UI"
+      ],
+      "stack": [
+        "Flutter",
+        "Dart"
+      ],
+      "images": [
+        {
+          "src": "./images/img3.jpeg",
+          "alt": "Weather Interface demonstration screenshot"
+        }
+      ],
+      "github": "",
+      "demo": ""
+    },
+    {
+      "id": "demo-interface",
+      "enabled": true,
+      "name": "Interface Experiments",
+      "status": "DEMO CONTENT",
+      "featured": false,
+      "coverLabel": "03",
+      "summary": "A sample entry for work that has no screenshots available.",
+      "description": "This demonstration project has no images. Its details open directly with the description and technology stack.\n\nThe same structure can support publicly shareable descriptions of private projects. Do not put confidential information in these files.",
+      "categories": [
+        "Angular",
+        "Web"
+      ],
+      "stack": [
+        "Angular",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ],
+      "images": [],
+      "github": "",
+      "demo": ""
+    }
+  ]
+}

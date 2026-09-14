@@ -1,0 +1,87 @@
+{
+  "language": "en",
+  "brand": {
+    "name": "Ajlan.",
+    "mark": "A",
+    "logo": "",
+    "favicon": ""
+  },
+  "meta": {
+    "title": "Muhammed Ajlan V — Flutter Developer",
+    "description": "Flutter developer at Triasoft Softwares. Explore projects, skills, and opportunities to work together.",
+    "image": ""
+  },
+  "theme": {
+    "background": "#080b12",
+    "surface": "#111827",
+    "text": "#f3f4f6",
+    "muted": "#a6afc1",
+    "accent": "#79b4ff",
+    "secondary": "#ae9bff"
+  },
+  "motion": {
+    "enabled": true
+  },
+  "sectionOrder": [
+    "hero",
+    "skills",
+    "projects",
+    "about",
+    "experience",
+    "education",
+    "certificates",
+    "contact"
+  ],
+  "navigation": [
+    {
+      "section": "skills",
+      "label": "Skills"
+    },
+    {
+      "section": "projects",
+      "label": "Work"
+    },
+    {
+      "section": "about",
+      "label": "About"
+    },
+    {
+      "section": "experience",
+      "label": "Journey"
+    },
+    {
+      "section": "certificates",
+      "label": "Certificates"
+    },
+    {
+      "section": "contact",
+      "label": "Let’s talk"
+    }
+  ],
+  "footer": {
+    "enabled": true,
+    "text": "© {year} Muhammed Ajlan V."
+  },
+  "labels": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "navigation": "Main navigation",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "enlargeImage": "Open full-size image in a new tab",
+    "imageUnavailable": "Image unavailable",
+    "technology": "Built with",
+    "github": "View GitHub",
+    "demo": "Open live demo",
+    "verify": "Verify certificate",
+    "featured": "FEATURED",
+    "viewDetails": "Explore project ↗",
+    "filters": "Filter projects",
+    "search": "Search projects or technologies",
+    "noResults": "No projects match your search.",
+    "loadMore": "Show more",
+    "allProjects": "All work",
+    "backToTop": "Back to top ↑"
+  }
+}

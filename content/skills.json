@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "eyebrow": "01 / THE TOOLKIT",
+  "title": "The tools behind the details.",
+  "description": "My current development toolkit, with room for everything I learn next.",
+  "groups": [
+    {
+      "id": "mobile",
+      "title": "Mobile development",
+      "items": [
+        "Flutter",
+        "Dart",
+        "Provider"
+      ]
+    },
+    {
+      "id": "web",
+      "title": "Web development",
+      "items": [
+        "Angular",
+        "TypeScript",
+        "HTML",
+        "CSS"
+      ]
+    }
+  ]
+}

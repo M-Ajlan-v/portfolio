@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#080b12">
+
+  <!-- Basic fallback metadata. Runtime values come from site.json. -->
+  <title>Portfolio</title>
+  <meta name="description" content="Developer portfolio">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Home"></a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navigation"
+        hidden
+      ></button>
+
+      <nav id="navigation" aria-label="Main navigation"></nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="container loading" role="status">Loading portfolio…</div>
+  </main>
+
+  <footer class="footer"></footer>
+
+  <dialog class="detail-dialog" aria-labelledby="detail-title">
+    <div class="dialog-bar">
+      <button class="close-dialog" type="button"></button>
+    </div>
+    <div class="dialog-content"></div>
+  </dialog>
+
+  <noscript>
+    <p>This portfolio requires JavaScript to display its content.</p>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "enabled": true,
+  "eyebrow": "MOBILE EXPERIENCES, THOUGHTFULLY BUILT",
+  "name": "Muhammed Ajlan V",
+  "role": "Flutter Developer · Triasoft Softwares",
+  "headline": [
+    {
+      "text": "Small details.",
+      "highlight": false
+    },
+    {
+      "text": "Better app",
+      "highlight": true
+    },
+    {
+      "text": "experiences.",
+      "highlight": true
+    }
+  ],
+  "paragraphs": [
+    "I turn ideas into mobile interfaces with Flutter—and keep improving with every screen, interaction, and challenge."
+  ],
+  "portrait": {
+    "src": "./images/profile.jpeg",
+    "alt": "Muhammed Ajlan V wearing a white shirt",
+    "position": "center top"
+  },
+  "availability": {
+    "enabled": true,
+    "text": "Open to opportunities & freelance enquiries"
+  },
+  "buttons": [
+    {
+      "id": "work",
+      "label": "Explore my work ↗",
+      "href": "#projects",
+      "style": "primary"
+    },
+    {
+      "id": "contact",
+      "label": "Let’s talk",
+      "href": "#contact",
+      "style": "secondary"
+    },
+    {
+      "id": "resume",
+      "label": "View résumé",
+      "href": "",
+      "style": "text"
+    }
+  ],
+  "showSocials": true,
+  "visual": {
+    "enabled": true,
+    "enable3D": false,
+    "enableParallax": true,
+    "caption": "Flutter · Dart · A little attention to everything."
+  }
+}

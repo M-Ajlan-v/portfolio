@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "github",
+      "label": "GitHub ↗",
+      "url": "https://github.com/M-Ajlan-v",
+      "enabled": true
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram ↗",
+      "url": "https://www.instagram.com/aj.u",
+      "enabled": true
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn ↗",
+      "url": "",
+      "enabled": true
+    }
+  ]
+}

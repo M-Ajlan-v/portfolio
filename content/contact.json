@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "eyebrow": "LET’S BUILD SOMETHING",
+  "title": "Your next idea could start here.",
+  "description": "Hiring a Flutter developer or planning an app?",
+  "text": "Tell me a little about what you have in mind.",
+  "email": "naju82064@gmail.com",
+  "emailButton": "Write me an email ↗",
+  "directTitle": "A conversation is a good first step.",
+  "directText": "For opportunities, freelance projects, or a simple hello.",
+  "gmailButton": "Open Gmail ↗",
+  "copyButton": "Copy email",
+  "copiedMessage": "Email address copied.",
+  "copyFailedMessage": "Select and copy the email address shown above.",
+  "emailSubject": "Let’s work together",
+  "form": {
+    "enabled": false,
+    "endpoint": "",
+    "nameLabel": "Your name",
+    "emailLabel": "Email address",
+    "messageLabel": "What are you working on?",
+    "submitLabel": "Send message",
+    "sendingLabel": "Sending…",
+    "successMessage": "Your message was submitted successfully.",
+    "errorMessage": "We could not confirm delivery. Please contact me by email."
+  }
+}

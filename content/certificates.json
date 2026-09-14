@@ -1,0 +1,37 @@
+{
+    "enabled": true,
+    "eyebrow": "CERTIFICATES",
+    "title": "Milestones along the way.",
+    "description": "",
+    "pageSize": 6,
+    "items": [
+        {
+            "id": "certificate-001",
+            "name": "Your certificate title",
+            "issuer": "Issuing organization",
+            "description": "What this certificate covers.",
+            "images": [
+                {
+                    "src": "./images/certificates/certificate-001.jpg",
+                    "alt": "Your certificate title"
+                }
+            ],
+            "url": "",
+            "enabled": true
+        },
+        {
+            "id": "certificate-002",
+            "name": "Your certificate title",
+            "issuer": "Issuing organization",
+            "description": "What this certificate covers.",
+            "images": [
+                {
+                    "src": "./images/certificates/certificate-001.jpg",
+                    "alt": "Your certificate title"
+                }
+            ],
+            "url": "",
+            "enabled": true
+        }
+    ]
+}
